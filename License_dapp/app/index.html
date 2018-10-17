@@ -1,0 +1,203 @@
+<html>
+<head>
+  <link rel="stylesheet" href="dist/bootstrap.min.css">
+  <script src="dist/bundle.js"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="https://atchai.com/img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://atchai.com/img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://atchai.com/img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://atchai.com/img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://atchai.com/img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://atchai.com/img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://atchai.com/img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://atchai.com/img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://atchai.com/img/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="https://atchai.com/img/favicons/manifest.json">
+  <link rel="mask-icon" href="https://atchai.com/img/favicons/safari-pinned-tab.svg">
+  <title>License Token - software licenses as ERC721 Ethereum tokens - Atchai</title>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <h1 class="display-3">License Token</h1>
+    <p class="lead">Software licenses as ERC721 tokens</p>
+    <hr class="my-4" >
+    <div class="row" >
+      <div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-left:15px">
+        <div class="card-body">
+          <h4 class="card-title">Transferable</h4>
+          <p class="card-text">Licenses can be resold. Vendor can set parameters such as a revenue share of the secondary sale or a time period before transfer is allowed.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-left:20px">
+        <div class="card-body">
+          <h4 class="card-title">Anti-piracy</h4>
+          <p class="card-text">You have to share your private key to share your license, as the token is transferrable you risk it being transferred away from you by doing this.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-left:20px">
+        <div class="card-body">
+          <h4 class="card-title">Decentralized authentication</h4>
+          <p class="card-text">Passwordless login to partner products without sharing any data between them.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="lead">This is a demonstration of how ERC721 tokens can be used to represent software licenses. </p>
+    <p class="lead">You buy a token, then authenticate with a server by cryptographically verifying that you own the address that owns the token. </p>
+
+    <p class="lead"><a href="#">All is explained in this blog post.</a></p>
+
+  </div>
+
+  <!-- METAMASK NOT INSTALLED  -->
+
+  <div class="container" id="metamask-install" style="display:none">
+    <div class="row" style="margin: 50 0 50 0px">
+      <div class="col-md-12 text-center">
+        <h2>You need to install Metamask</h2>
+        <p>It looks like you're not using an ethereum enabled browser.  The simplest way to solve this is to</p>
+        <h4><a href="https://metamask.io/">Download Metamask</a></h4>
+        <p>You will need to install Metamask and then refresh this page.  If you are using the live ethereum network then you will also need to pay for some ether in your account.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- METAMASK NOT LOGGED IN  -->
+
+  <div class="container" id="metamask-login" style="display:none">
+    <div class="row" style="margin: 50 0 50 0px">
+      <div class="col-md-12 text-center">
+        <h2>You are not logged in to Metamask</h2>
+        <p>It looks like you have Metamask installed but you are not logged in.  Please log in and refresh the page</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WRONG NETWORK  -->
+
+  <div class="container" id="metamask-network" style="display:none">
+    <div class="row" style="margin: 50 0 50 0px">
+      <div class="col-md-12 text-center">
+        <h2>Please use Ropsten Network</h2>
+        <p>This dapp is only available on the Ropsten network at the moment, please switch network in the top left hand corner of MetaMask.</p>
+        <p>You can then <a href="https://faucet.metamask.io/">collect some free ether from the faucet here</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT  -->
+
+  <div class="container" id="main-content" style="display:none">
+
+    <div class="card bg-light mb-3" id="blockchain" style="max-width:90%;">
+        <div class="card-header">Buy a token</div>
+        <div class="card-body">
+          <div class="form-group form-inline">
+            <button class="buy btn btn-success">Buy token</button>
+          </div>
+          <p>After clicking the buy button, Metamask should open and ask you to make a transaction.  This is on testnet so not real ether.</p>
+        </div>
+    </div>
+
+    <div class="card bg-light mb-3" id="blockchain" style="max-width:90%;">
+        <div class="card-header">Check your balance</div>
+        <div class="card-body">
+          <div class="form-group form-inline">
+            <button class="balance btn btn-success">Get my token balance</button>
+          </div>
+          <p>It may take a minute for your transaction to be mined.  Make sure you have a balance of 1 or more before proceeding.</p>
+          <p>Account balance: <span id="account_balance">?</span></p>
+        </div>
+    </div>
+
+    <div class="card bg-light mb-3" id="blockchain" style="max-width:90%;">
+      <div class="card-header">Securely prove you own your etherum address</div>
+      <div class="card-body">
+        <div class="form-group form-inline">
+          <!--<input type="text" class="text form-control" placeholder="Your name">-->
+          <button class="get btn btn-success">Sign Challenge</button>
+        </div>
+        <p>The server generates a one-time challenge message that you sign with metamask.  Your signature proves to the server that you own the ethereum address.</p>
+        <h4>Challenge:</h4> <pre class="challenge"></pre>
+        <h4>Signature:</h4> <pre class="signature"></pre>
+
+      </div>
+    </div>
+
+    <div class="card bg-light mb-3" id="blockchain" style="max-width:90%;">
+      <div class="card-header">Authenticate</div>
+      <div class="card-body">
+        <h1 class="success" style="display: none; color:green">Success</h1>
+        <h1 class="fail" style="display: none;  color:red">Failed</h1>
+        <div class="form-group form-inline">
+          <!--<input type="text" class="text form-control" placeholder="Your name">-->
+          <button class="verify btn btn-success">Authenticate</button>
+        </div>
+        <p>You send your signature to the server, which then verifies that it matches your address and checks with the smart contract that you have at least one token, if you do then you are authenticated.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--Footer-->
+        <footer class="page-footer font-small bg-primary pt-0" style="margin-top:50px">
+
+            <!--Footer Links-->
+            <div class="container">
+
+                <!--Grid row-->
+                <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+
+                  <!--Grid column-->
+                  <div class="col-md-2 mb-3">
+                      <h3 class="title font-weight-bold" style="color:white">Licence Token</h3>
+                  </div>
+                  <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <hr class="white" style="margin: 0 15%;">
+
+                <!--Grid row-->
+                <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+                    <!--Grid column-->
+                    <div class="col-md-8 col-12 mt-5">
+                        <p style="line-height: 1.7rem; color:white">
+                          This is a demonstration of how ERC721 tokens can be used to represent software licenses.  You buy a token, then authenticate with a server by cryptographically verifying that you own the address that owns the token.
+                        </p>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+
+            </div>
+            <!--/Footer Links-->
+
+            <!--Copyright-->
+            <div class="footer-copyright py-3 text-center">
+                <div class="container-fluid" style="color:white">
+                  &copy; 2018 <a href="https://atchai.com" style="color:white"> Atchai </a>
+                </div>
+            </div>
+            <!--/Copyright-->
+
+        </footer>
+        <!--/Footer-->
+
+      </body>
+</html>
